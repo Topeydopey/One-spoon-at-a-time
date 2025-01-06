@@ -30,11 +30,11 @@ public class ArmControllerSushi : MonoBehaviour
             selectedPart.AddForce(Vector2.right * forceAmount);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             selectedPart.AddTorque(torqueAmount);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             selectedPart.AddTorque(-torqueAmount);
         }
