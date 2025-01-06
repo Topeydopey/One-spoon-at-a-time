@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmController : MonoBehaviour
+public class ArmControllerSushi : MonoBehaviour
 {
     public Rigidbody2D elbow;
 
@@ -13,7 +15,7 @@ public class ArmController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            selectedPart.AddForce(Vector2.up * (forceAmount + 5));
+            selectedPart.AddForce(Vector2.up * forceAmount);
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -28,11 +30,11 @@ public class ArmController : MonoBehaviour
             selectedPart.AddForce(Vector2.right * forceAmount);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             selectedPart.AddTorque(torqueAmount);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             selectedPart.AddTorque(-torqueAmount);
         }
