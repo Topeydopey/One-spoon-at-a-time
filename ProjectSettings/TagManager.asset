@@ -6,9 +6,6 @@ TagManager:
   tags:
   - DryingPole
   - Hand
-  - Trimmable
-  - Scissor
-  - Untrimmable
   layers:
   - Default
   - TransparentFX
