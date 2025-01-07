@@ -18,8 +18,8 @@ public class EyedropArm : MonoBehaviour
 
         // Control lower arm rotation
         if (Input.GetKey(KeyCode.A))
-            lowerArm.AddTorque(-moveSpeed, ForceMode2D.Force);
-        if (Input.GetKey(KeyCode.D))
             lowerArm.AddTorque(moveSpeed, ForceMode2D.Force);
+        if (Input.GetKey(KeyCode.D))
+            lowerArm.AddTorque(-moveSpeed, ForceMode2D.Force);
     }
 }
