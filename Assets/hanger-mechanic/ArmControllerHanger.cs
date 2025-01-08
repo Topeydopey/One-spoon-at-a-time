@@ -6,7 +6,6 @@ public class ArmControllerHanger : MonoBehaviour
 
     public float forceAmount = 10f;
     public float torqueAmount = 5f;
-
     void FixedUpdate()
     {
         Rigidbody2D selectedPart = elbow;
@@ -28,11 +27,11 @@ public class ArmControllerHanger : MonoBehaviour
             selectedPart.AddForce(Vector2.right * forceAmount);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             selectedPart.AddTorque(torqueAmount);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             selectedPart.AddTorque(-torqueAmount);
         }
