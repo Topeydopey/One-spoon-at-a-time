@@ -9,6 +9,7 @@ TagManager:
   - Trimmable
   - Scissor
   - Untrimmable
+  - Hanger
   layers:
   - Default
   - TransparentFX
