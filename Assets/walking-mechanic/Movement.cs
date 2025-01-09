@@ -18,6 +18,10 @@ public class Movement : MonoBehaviour
     public RightChecked rightCheckedScript;
     public LeftChecked leftCheckedScript;
 
+    //Balance
+    public Balance leftLegbalace;
+    public Balance rightLegbalace;
+
     //Supports
     private float timer = 0;
 
@@ -39,12 +43,16 @@ public class Movement : MonoBehaviour
             right.motorSpeed = -hingespeed;
             rightThigh.motor = right;
             rightCheckedScript.RightTouched = false;
+
+            rightLegbalace.force = 20;
         }
         else
         {
             rightThigh.useMotor = true;
             right.motorSpeed = hingespeed;
             rightThigh.motor = right;
+
+            rightLegbalace.force = 100;
         }
 
         if (Input.GetKey(KeyCode.K))
@@ -53,23 +61,27 @@ public class Movement : MonoBehaviour
             left.motorSpeed = -hingespeed;
             leftThigh.motor = left;
             leftCheckedScript.LeftTouched = false;
+
+            leftLegbalace.force = 20;
         }
         else
         {
             leftThigh.useMotor = true;
             left.motorSpeed = hingespeed;
             leftThigh.motor = left;
+
+            leftLegbalace.force = 100;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             //rb.AddForce(transform.up * 3f);
-            rb.AddForce(transform.right * 20f);
+            rb.AddForce(transform.right * 100f);
         }
         if (Input.GetKey(KeyCode.A))
         {
             //rb.AddForce(transform.up * 3f);
-            rb.AddForce(-transform.right * 20f);
+            rb.AddForce(-transform.right * 100f);
         }
     }
     void Update()
