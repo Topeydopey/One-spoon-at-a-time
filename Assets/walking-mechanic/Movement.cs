@@ -12,15 +12,18 @@ public class Movement : MonoBehaviour
     public HingeJoint2D leftThigh;
     private JointMotor2D right;
     private JointMotor2D left;
-    private float hingespeed = 100;
+    private float hingespeed = 60;
 
     //Scripts
     public RightChecked rightCheckedScript;
     public LeftChecked leftCheckedScript;
 
     //Balance
-    public Balance leftLegbalace;
-    public Balance rightLegbalace;
+    public Balance leftFootBalance;
+    public Balance rightFootBalance;
+
+    public Balance leftLegBalance;
+    public Balance rightLegBalance;
 
     //Supports
     private float timer = 0;
@@ -44,7 +47,17 @@ public class Movement : MonoBehaviour
             rightThigh.motor = right;
             rightCheckedScript.RightTouched = false;
 
-            rightLegbalace.force = 20;
+            if (rightFootBalance.force <= 100)
+            {
+                rightFootBalance.force -= 20 * Time.deltaTime;
+            }
+
+            if (leftLegBalance.force <= 100)
+            {
+                leftLegBalance.force -= 20 * Time.deltaTime;
+            }
+
+            LossBalance();
         }
         else
         {
@@ -52,7 +65,24 @@ public class Movement : MonoBehaviour
             right.motorSpeed = hingespeed;
             rightThigh.motor = right;
 
-            rightLegbalace.force = 100;
+            if (rightFootBalance.force <= 100)
+            {
+                rightFootBalance.force += 30 * Time.deltaTime;
+            }
+            if (rightFootBalance.force >= 100)
+            {
+                rightFootBalance.force = 100;
+            }
+
+            if (rightLegBalance.force <= 100)
+            {
+                rightLegBalance.force += 30 * Time.deltaTime;
+            }
+            if (rightLegBalance.force >= 100)
+            {
+                rightLegBalance.force = 100;
+            }
+
         }
 
         if (Input.GetKey(KeyCode.K))
@@ -62,7 +92,17 @@ public class Movement : MonoBehaviour
             leftThigh.motor = left;
             leftCheckedScript.LeftTouched = false;
 
-            leftLegbalace.force = 20;
+            if (leftFootBalance.force <= 100)
+            {
+                leftFootBalance.force -= 20 * Time.deltaTime;
+            }
+
+            if (rightLegBalance.force <= 100)
+            {
+                rightLegBalance.force -= 20 * Time.deltaTime;
+            }
+
+            LossBalance();
         }
         else
         {
@@ -70,21 +110,37 @@ public class Movement : MonoBehaviour
             left.motorSpeed = hingespeed;
             leftThigh.motor = left;
 
-            leftLegbalace.force = 100;
+            if (leftFootBalance.force <= 100)
+            {
+                leftFootBalance.force += 30 * Time.deltaTime;
+            }
+            if (leftFootBalance.force >= 100)
+            {
+                leftFootBalance.force = 100;
+            }
+
+            if (leftLegBalance.force <= 100)
+            {
+                leftLegBalance.force += 30 * Time.deltaTime;
+            }
+            if (leftLegBalance.force >= 100)
+            {
+                leftLegBalance.force = 100;
+            }
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             //rb.AddForce(transform.up * 3f);
-            rb.AddForce(transform.right * 100f);
+            rb.AddForce(transform.right * 50f);
         }
         if (Input.GetKey(KeyCode.A))
         {
             //rb.AddForce(transform.up * 3f);
-            rb.AddForce(-transform.right * 100f);
+            rb.AddForce(-transform.right * 50f);
         }
     }
-    void Update()
+    /*void Update()
     {
         if (rightCheckedScript.RightTouched == false && timer <= 1 || leftCheckedScript.LeftTouched == false && timer <= 1)
         {
@@ -95,6 +151,24 @@ public class Movement : MonoBehaviour
             {
                 timer = 0;
             }
+        }
+    }*/
+
+    void LossBalance()
+    {
+        if (timer == 0)
+        {
+            timer += 1 * Time.deltaTime;
+        }
+
+        if (timer >= 3)
+        {
+            rightFootBalance.force = 0;
+            leftFootBalance.force = 0;
+
+            leftLegBalance.force = 0;
+            rightLegBalance.force = 0;
+
         }
     }
 }
