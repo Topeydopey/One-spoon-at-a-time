@@ -2165,8 +2165,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -50
-    m_UpperAngle: 50
+    m_LowerAngle: -70
+    m_UpperAngle: 80
 --- !u!61 &583176711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3591,8 +3591,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -50
-    m_UpperAngle: 50
+    m_LowerAngle: -70
+    m_UpperAngle: 80
 --- !u!61 &1044283027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4644,7 +4644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8ac410c8aa99c46ac4dc6d9040774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 100
+  force: 50
 --- !u!114 &1328744302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4661,6 +4661,8 @@ MonoBehaviour:
   leftThigh: {fileID: 45362007}
   rightCheckedScript: {fileID: 563781582}
   leftCheckedScript: {fileID: 1155130074}
+  leftLegbalace: {fileID: 583176715}
+  rightLegbalace: {fileID: 1044283031}
 --- !u!1 &1343810408
 GameObject:
   m_ObjectHideFlags: 0
