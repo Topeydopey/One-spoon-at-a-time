@@ -10260,7 +10260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scissorFunction: {fileID: 467950210}
-  summaryPanel: {fileID: 0}
+  summaryPanel: {fileID: 1170267403}
 --- !u!1 &2068394003
 GameObject:
   m_ObjectHideFlags: 0
