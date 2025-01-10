@@ -28,11 +28,11 @@ public class ArmControllerBonsai : MonoBehaviour
             selectedPart.AddForce(Vector2.right * forceAmount);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.K))
         {
             selectedPart.AddTorque(-torqueAmount);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.J))
         {
             selectedPart.AddTorque(torqueAmount);
         }
