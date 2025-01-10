@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EyeTarget : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Droplet"))
+        if (other.CompareTag("Droplet")) // Tag your Droplet prefab as "Droplet"
         {
-            Debug.Log("Perfect Drop!");
-            Destroy(collision.gameObject);  // Destroy the droplet
-            // Add scoring or feedback here
+            Debug.Log("Success! Eye has been hit by droplet.");
+            // Increase score, play a sound, etc.
+            // Then destroy the droplet
+            Destroy(other.gameObject);
         }
     }
 }
