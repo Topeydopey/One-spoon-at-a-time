@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2425411948645145451}
   - component: {fileID: -6878320698491481120}
   - component: {fileID: 5313323410576184477}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Droplet
   m_TagString: Droplet
   m_Icon: {fileID: 0}
