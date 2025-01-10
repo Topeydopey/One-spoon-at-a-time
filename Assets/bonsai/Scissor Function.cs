@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ScissorFunction : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class ScissorFunction : MonoBehaviour
         {
             Destroy(joint);
         }
+        HappinessManager.Instance.UpdateHappinessPoints(1);
     }
 
     void CutUntrimmable()
@@ -85,5 +87,6 @@ public class ScissorFunction : MonoBehaviour
         {
             untrimmableTarget.GetComponent<Rigidbody2D>().isKinematic = false;
         }
+        HappinessManager.Instance.UpdateHappinessPoints(-4);
     }
 }
