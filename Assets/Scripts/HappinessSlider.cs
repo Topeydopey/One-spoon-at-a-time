@@ -20,4 +20,16 @@ public class HappinessSlider : MonoBehaviour
             happinessSlider.value = HappinessManager.Instance.HappinessPoints;
         }
     }
+
+    /*
+    public void SetMaxHappiness(int happiness) //set max happiness = 100 at first
+    {
+        happinessSlider.maxValue = happiness;
+        happinessSlider.value = happiness;
+    }
+
+    public void SetHappiness(int happiness)
+    {
+        happinessSlider.value = happiness;
+    }*/
 }
