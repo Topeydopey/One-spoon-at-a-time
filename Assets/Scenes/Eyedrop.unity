@@ -171,7 +171,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28486395, y: -0.6746354}
+  m_Offset: {x: -0.08368182, y: -0.6746354}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -182,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.909942, y: 0.1344161}
+  m_Size: {x: 14.647034, y: 0.1344161}
   m_EdgeRadius: 0
 --- !u!4 &22631614
 Transform:
@@ -363,7 +363,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40964386, y: 0.0821681}
+  m_Offset: {x: -0.40964386, y: 0.09368515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -374,7 +374,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18071228, y: 7.4614525}
+  m_Size: {x: 0.18071228, y: 7.2080774}
   m_EdgeRadius: 0
 --- !u!4 &956999810
 Transform:
@@ -440,7 +440,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15211105, y: -0.6746354}
+  m_Offset: {x: -0.12907696, y: -0.6746354}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -451,7 +451,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.301975, y: 0.13836867}
+  m_Size: {x: 14.49975, y: 0.1383686}
   m_EdgeRadius: 0
 --- !u!4 &1198829098
 Transform:
@@ -517,7 +517,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40964386, y: 0.035381913}
+  m_Offset: {x: -0.40964386, y: -0.06827164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -528,7 +528,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18071228, y: 7.36788}
+  m_Size: {x: 0.18071228, y: 7.160573}
   m_EdgeRadius: 0
 --- !u!4 &1268326307
 Transform:
@@ -584,6 +584,7 @@ MonoBehaviour:
   dropletThreshold: 3
   rotationForce: 0.4
   rotationSpeed: 0.4
+  recoilForce: 2
 --- !u!61 &1296422268
 BoxCollider2D:
   m_ObjectHideFlags: 0
