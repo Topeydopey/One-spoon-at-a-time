@@ -7,6 +7,7 @@ public class ScissorFunction : MonoBehaviour
     public HingeJoint2D upperHinge;
     public HingeJoint2D lowerHinge;
     public float angleThreshold = 12f;
+    public int maximumAccident = 5;
 
     private bool isOverTrimmable = false;
     private bool isOverUntrimmable = false;
@@ -14,6 +15,7 @@ public class ScissorFunction : MonoBehaviour
     private Collider2D untrimmableTarget;
 
     private bool canCut = false;
+    private int accidentCut = 0;
     void Update()
     {
         float upperAngle = Mathf.Abs(upperHinge.jointAngle);
@@ -29,7 +31,13 @@ public class ScissorFunction : MonoBehaviour
             }
             else if (isOverUntrimmable)
             {
-                CutUntrimmable();
+                accidentCut++;
+
+                if (accidentCut >= maximumAccident)
+                {
+                    CutUntrimmable();
+                    accidentCut = 0;
+                }
             }
         }
     }
@@ -83,9 +91,10 @@ public class ScissorFunction : MonoBehaviour
 
     void CutUntrimmable()
     {
-        if (untrimmableTarget != null && !isOverTrimmable)
+        FixedJoint2D joint = untrimmableTarget.GetComponent<FixedJoint2D>();
+        if (joint != null)
         {
-            untrimmableTarget.GetComponent<Rigidbody2D>().isKinematic = false;
+            Destroy(joint);
         }
         HappinessManager.Instance.UpdateHappinessPoints(-4);
     }
