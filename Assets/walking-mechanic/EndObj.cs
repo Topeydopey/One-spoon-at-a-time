@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class EndObj : MonoBehaviour
 {
-    public WalkingTimer timerScipt;
+    public HappinessSystem happinessSystem;
+
     public GameObject winPanel;
+    public GameObject happinessBar;
+    public HappinessBar sliderScript;
+    public float currentHappiness; //we should have a script to save to value throughout the scenes
+
+
     void Update()
     {
         transform.Rotate(0, 1, 0);
@@ -16,10 +22,24 @@ public class EndObj : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            timerScipt.notWin = true;
+            happinessSystem.OnWin();
+
             winPanel.SetActive(true);
+
+            happinessBar.SetActive(true);
+            //IncreaseHappiness(20);
+
             Time.timeScale = 0;
             this.gameObject.SetActive(false);
         }
     }
+    /*
+    void IncreaseHappiness(float heal)
+    {
+        currentHappiness += heal;
+
+        sliderScript.SetHappiness(currentHappiness);
+        //systemScript.currentHappiness = currentHappiness;
+    }
+    */
 }
