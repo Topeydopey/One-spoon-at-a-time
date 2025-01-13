@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WalkingTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public float countdownTime = 30;
+    public float countdownTime = 60;
     public bool notWin;
+    public GameObject lossPanel;
+
+    public void Start()
+    {
+
+    }
+
 
     void Update()
     {
@@ -19,8 +27,10 @@ public class WalkingTimer : MonoBehaviour
         else if (countdownTime < 0)
         {
             countdownTime = 0;
-            Debug.Log("Game Over");
             timerText.color = Color.red;
+            lossPanel.SetActive(true);
+            Time.timeScale = 0f;
+
         }
         int minutes = Mathf.FloorToInt(countdownTime / 60);
         int seconds = Mathf.FloorToInt(countdownTime % 60); //& take to remainder 
