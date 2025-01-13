@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ScissorFunction : MonoBehaviour
 {
+    public HappinessSystem happinessSystem;
+    public BonsaiTimer bonsaiTimer;
     public HingeJoint2D upperHinge;
     public HingeJoint2D lowerHinge;
     public float angleThreshold = 12f;
@@ -86,7 +88,8 @@ public class ScissorFunction : MonoBehaviour
         {
             Destroy(joint);
         }
-        HappinessManager.Instance.UpdateHappinessPoints(1);
+        happinessSystem.happinessData.IncreaseHappiness(2);
+        bonsaiTimer.penalty -= 1;
     }
 
     void CutUntrimmable()
@@ -96,6 +99,6 @@ public class ScissorFunction : MonoBehaviour
         {
             Destroy(joint);
         }
-        HappinessManager.Instance.UpdateHappinessPoints(-4);
+        bonsaiTimer.penalty += 2;
     }
 }

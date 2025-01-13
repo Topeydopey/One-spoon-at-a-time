@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Hanger.unity
     guid: 4bce94d9fabbc0549924a8440ba800d7
   - enabled: 1
+    path: Assets/Scenes/Bonsai Levels/Bonsai #1.unity
+    guid: d49cfc9764acb5f46b636871299a00ff
+  - enabled: 1
     path: Assets/Scenes/Walking Levels/Walking Lvl 1.unity
     guid: 5bd5ae128a7547f49b397a5dd2a41916
   - enabled: 1
