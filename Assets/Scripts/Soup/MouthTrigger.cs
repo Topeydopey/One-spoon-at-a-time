@@ -1,21 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouthTrigger : MonoBehaviour
 {
-    private int soupCount = 0;
-
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the colliding object is a soup droplet
-        if (other.gameObject.CompareTag("Soup"))
+        if (other.CompareTag("Soup"))
         {
-            // Increase score or update a progress bar
-            soupCount++;
-            Debug.Log("Soup Droplet Delivered! Count: " + soupCount);
+            // Add points, for example +10 each time a soup droplet arrives
+            SoupScoreManager.Instance.AddPoints(10);
 
-            // Optionally destroy the droplet or disable it
+            // You might want to destroy the droplet to simulate "eating" it
             Destroy(other.gameObject);
         }
     }
