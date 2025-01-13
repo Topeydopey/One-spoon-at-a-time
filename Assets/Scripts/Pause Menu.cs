@@ -35,4 +35,10 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(currentScene);
         Time.timeScale = 1;
     }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(3);
+        Time.timeScale = 1;
+    }
 }
