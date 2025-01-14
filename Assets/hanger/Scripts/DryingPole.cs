@@ -4,12 +4,10 @@ using TMPro;
 public class DryingPole : MonoBehaviour
 {
     private bool isCollidingWithHanger = false;
-    public TextMeshProUGUI scoreText;
     public CollectHanger collectHanger;
     public Transform dryingPole;
     public Transform spawnedHangers;
 
-    private int score = 0;
     private GameObject targetHanger;
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -54,7 +52,6 @@ public class DryingPole : MonoBehaviour
 
                 DeactivateChildColliders(targetHanger);
 
-                IncreaseScore();
                 collectHanger.ResetHanger();
             }
         }
@@ -67,20 +64,5 @@ public class DryingPole : MonoBehaviour
         {
             collider.enabled = false;
         }
-
-        // Collider2D mainCollider = hanger.GetComponent<Collider2D>();
-        // mainCollider.enabled = true;
-    }
-    void IncreaseScore()
-    {
-        score += 1;
-        UpdateScoreText();
-
-        targetHanger = null;
-    }
-
-    void UpdateScoreText()
-    {
-        scoreText.text = "Score: " + score;
     }
 }

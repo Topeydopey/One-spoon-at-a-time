@@ -7,11 +7,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BonsaiTimer : MonoBehaviour
+public class HangerTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float countdownTime = 60;
-    public int penalty = 4;
 
     public HappinessSystem happinessSystem;
 
@@ -26,11 +25,6 @@ public class BonsaiTimer : MonoBehaviour
         int minutes = Mathf.FloorToInt(countdownTime / 60);
         int seconds = Mathf.FloorToInt(countdownTime % 60); // & take to remainder 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-        if (penalty <= 0)
-        {
-            penalty = 0;
-        }
 
         if (countdownTime > 0)
         {
@@ -53,7 +47,7 @@ public class BonsaiTimer : MonoBehaviour
         timerText.color = Color.red;
         timeOut.SetActive(true);
 
-        happinessSystem.happinessData.DecreaseHappiness(penalty * 5);
+        happinessSystem.OnLose();
 
         happinessBar.SetActive(true);
 
@@ -65,7 +59,7 @@ public class BonsaiTimer : MonoBehaviour
         timerText.color = Color.green;
         greatJob.SetActive(true);
 
-        happinessSystem.happinessData.DecreaseHappiness(penalty * 5);
+        happinessSystem.OnWin();
 
         happinessBar.SetActive(true);
 
