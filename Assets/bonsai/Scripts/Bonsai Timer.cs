@@ -16,7 +16,7 @@ public class BonsaiTimer : MonoBehaviour
     public HappinessSystem happinessSystem;
 
 
-    public GameObject lossPanel;
+    public GameObject nextLevel;
     public GameObject happinessBar;
     public HappinessBar sliderScript;
 
@@ -35,14 +35,6 @@ public class BonsaiTimer : MonoBehaviour
             TimeOut();
         }
     }
-    /*
-        void DecreaseHappiness(int damage)
-        {
-            currentHappiness -= damage;
-
-            sliderScript.SetHappiness(currentHappiness);
-        }
-        */
 
     public void resetTimer()
     {
@@ -53,7 +45,7 @@ public class BonsaiTimer : MonoBehaviour
     {
         countdownTime = 0;
         timerText.color = Color.red;
-        lossPanel.SetActive(true);
+        nextLevel.SetActive(true);
 
         happinessSystem.happinessData.DecreaseHappiness(penalty * 5);
 
@@ -61,6 +53,4 @@ public class BonsaiTimer : MonoBehaviour
 
         Time.timeScale = 0f;
     }
-
-
 }
