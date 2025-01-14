@@ -31,7 +31,7 @@ public class MovingStair : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        speedMul = 0.2f;
+        speedMul = 0.4f;
     }
     public void OnTriggerExit2D(Collider2D collision)
     {

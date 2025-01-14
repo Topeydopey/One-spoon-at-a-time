@@ -23,7 +23,7 @@ public class MainMenuButton : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Walking Upstair");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1;
     }
 
