@@ -11,6 +11,7 @@ public class ScissorFunction : MonoBehaviour
     public float angleThreshold = 12f;
     public int maximumAccident = 5;
     public int allCuttableObjects = 4;
+    public int allUnCuttableObjects = 3;
 
     private bool isOverTrimmable = false;
     private bool isOverUntrimmable = false;
@@ -20,6 +21,7 @@ public class ScissorFunction : MonoBehaviour
     private bool canCut = false;
     private int accidentCut = 0;
     private int trimmableCutted;
+    private int untrimmableCutted;
     void Update()
     {
         float upperAngle = Mathf.Abs(upperHinge.jointAngle);
@@ -44,7 +46,7 @@ public class ScissorFunction : MonoBehaviour
                 }
             }
         }
-        if (trimmableCutted >= allCuttableObjects)
+        if (trimmableCutted >= allCuttableObjects || untrimmableCutted >= allUnCuttableObjects)
         {
             StartCoroutine(FinishCutting());
         }
@@ -107,10 +109,11 @@ public class ScissorFunction : MonoBehaviour
             Destroy(joint);
         }
         bonsaiTimer.penalty += 2;
+        untrimmableCutted += 1;
     }
     IEnumerator FinishCutting()
     {
         yield return new WaitForSeconds(1);
-        bonsaiTimer.TimeOut();
+        bonsaiTimer.winBeforeTimeOut();
     }
 }
