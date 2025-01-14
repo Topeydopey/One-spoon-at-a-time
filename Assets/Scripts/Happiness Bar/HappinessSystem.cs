@@ -13,7 +13,7 @@ public class HappinessSystem : MonoBehaviour
 
     public void OnLose()
     {
-        happinessData.DecreaseHappiness(20);
+        happinessData.DecreaseHappiness(15);
     }
     /*
     void Start()
