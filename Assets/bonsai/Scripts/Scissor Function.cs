@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ScissorFunction : MonoBehaviour
 {
+    public Animator animator;
+    public GameObject shakeCanvas;
     public HappinessSystem happinessSystem;
     public BonsaiTimer bonsaiTimer;
     public HingeJoint2D upperHinge;
@@ -19,6 +21,7 @@ public class ScissorFunction : MonoBehaviour
     private Collider2D untrimmableTarget;
 
     private bool canCut = false;
+    private bool hasEnded = false;
     private int accidentCut = 0;
     private int trimmableCutted;
     private int untrimmableCutted;
@@ -39,6 +42,9 @@ public class ScissorFunction : MonoBehaviour
             {
                 accidentCut++;
 
+                animator.SetTrigger("shake");
+                StartCoroutine(Error());
+
                 if (accidentCut >= maximumAccident)
                 {
                     CutUntrimmable();
@@ -46,9 +52,10 @@ public class ScissorFunction : MonoBehaviour
                 }
             }
         }
-        if (trimmableCutted >= allCuttableObjects || untrimmableCutted >= allUnCuttableObjects)
+        if (trimmableCutted >= allCuttableObjects && !hasEnded || untrimmableCutted >= allUnCuttableObjects && !hasEnded)
         {
             StartCoroutine(FinishCutting());
+            hasEnded = true;
         }
     }
 
@@ -113,7 +120,20 @@ public class ScissorFunction : MonoBehaviour
     }
     IEnumerator FinishCutting()
     {
-        yield return new WaitForSeconds(0);
-        bonsaiTimer.winBeforeTimeOut();
+        yield return new WaitForSeconds(1);
+        if (trimmableCutted >= allCuttableObjects)
+        {
+            bonsaiTimer.winBeforeTimeOut();
+        }
+        else if (untrimmableCutted >= allUnCuttableObjects)
+        {
+            bonsaiTimer.endBeforeTimeOut();
+        }
+    }
+    IEnumerator Error()
+    {
+        shakeCanvas.SetActive(true);
+        yield return new WaitForSeconds(1);
+        shakeCanvas.SetActive(false);
     }
 }

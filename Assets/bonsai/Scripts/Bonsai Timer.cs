@@ -18,6 +18,7 @@ public class BonsaiTimer : MonoBehaviour
 
     public GameObject timeOut;
     public GameObject greatJob;
+    public GameObject Lose;
     public GameObject happinessBar;
     public HappinessBar sliderScript;
 
@@ -52,6 +53,18 @@ public class BonsaiTimer : MonoBehaviour
         countdownTime = 0;
         timerText.color = Color.red;
         timeOut.SetActive(true);
+
+        happinessSystem.happinessData.DecreaseHappiness(penalty * 5);
+
+        happinessBar.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
+    public void endBeforeTimeOut()
+    {
+        countdownTime = 0;
+        timerText.color = Color.red;
+        Lose.SetActive(true);
 
         happinessSystem.happinessData.DecreaseHappiness(penalty * 5);
 
