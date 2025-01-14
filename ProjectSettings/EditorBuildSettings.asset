@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: cb62b8ee70b9ef34fbf47da6e38ae77d
-  - enabled: 1
     path: Assets/Scenes/Hanger.unity
     guid: 4bce94d9fabbc0549924a8440ba800d7
   - enabled: 1
@@ -24,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Walking Levels/Walking Lvl 2.unity
     guid: 3f666888fcf788f4d85f064bdaec1f45
   - enabled: 1
-    path: Assets/Scenes/Walking Levels/Walking Lvl 3.unity
-    guid: dcdcc2027da8b274893d7feef3bae9e1
+    path: Assets/Scenes/Bonsai Levels/Bonsai #2.unity
+    guid: 7ccb1f9d185e7be4c89b99a58013b925
+  - enabled: 1
+    path: Assets/Scenes/Bonsai Levels/Bonsai #End.unity
+    guid: 111c1557acf621749a799628e3464951
   m_configObjects: {}
