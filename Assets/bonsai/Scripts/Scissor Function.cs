@@ -10,6 +10,7 @@ public class ScissorFunction : MonoBehaviour
     public HingeJoint2D lowerHinge;
     public float angleThreshold = 12f;
     public int maximumAccident = 5;
+    public int allCuttableObjects = 4;
 
     private bool isOverTrimmable = false;
     private bool isOverUntrimmable = false;
@@ -18,6 +19,7 @@ public class ScissorFunction : MonoBehaviour
 
     private bool canCut = false;
     private int accidentCut = 0;
+    private int trimmableCutted;
     void Update()
     {
         float upperAngle = Mathf.Abs(upperHinge.jointAngle);
@@ -41,6 +43,10 @@ public class ScissorFunction : MonoBehaviour
                     accidentCut = 0;
                 }
             }
+        }
+        if (trimmableCutted >= allCuttableObjects)
+        {
+            StartCoroutine(FinishCutting());
         }
     }
 
@@ -90,6 +96,7 @@ public class ScissorFunction : MonoBehaviour
         }
         happinessSystem.happinessData.IncreaseHappiness(2);
         bonsaiTimer.penalty -= 1;
+        trimmableCutted += 1;
     }
 
     void CutUntrimmable()
@@ -100,5 +107,10 @@ public class ScissorFunction : MonoBehaviour
             Destroy(joint);
         }
         bonsaiTimer.penalty += 2;
+    }
+    IEnumerator FinishCutting()
+    {
+        yield return new WaitForSeconds(1);
+        bonsaiTimer.TimeOut();
     }
 }

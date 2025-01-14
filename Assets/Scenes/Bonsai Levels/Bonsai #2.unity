@@ -885,10 +885,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2999,6 +2999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542887018}
   - component: {fileID: 542887017}
+  - component: {fileID: 542887019}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3018,8 +3019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adf491d9e74a1f45b0585618684b9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scissorFunction: {fileID: 943766353}
-  summaryPanel: {fileID: 1166660288}
 --- !u!4 &542887018
 Transform:
   m_ObjectHideFlags: 0
@@ -3035,6 +3034,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &542887019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542887016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8976290783b812449bd5e298cce6c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happinessData: {fileID: 11400000, guid: a3f00d52f221f2241a6bfefbdd6dd758, type: 2}
 --- !u!1 &598567811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,6 +4255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b4619cde911d94e876ee1b1bd6c368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happinessSystem: {fileID: 0}
+  bonsaiTimer: {fileID: 0}
   upperHinge: {fileID: 1303199017}
   lowerHinge: {fileID: 153229556}
   angleThreshold: 3
@@ -6045,10 +6059,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -7506,50 +7520,6 @@ Transform:
   - {fileID: 675862772}
   - {fileID: 1870019549}
   m_Father: {fileID: 980481964}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1641451681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1641451683}
-  - component: {fileID: 1641451682}
-  m_Layer: 0
-  m_Name: HappinessManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1641451682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641451681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f58d63dc547ba284abc0812b6a84b1f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1641451683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641451681}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0497566, y: 1.0911269, z: -0.068794884}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1691853578
 GameObject:
@@ -9316,7 +9286,6 @@ SceneRoots:
   - {fileID: 980481964}
   - {fileID: 123160107}
   - {fileID: 506142877}
-  - {fileID: 1641451683}
   - {fileID: 542887018}
   - {fileID: 140795769}
   - {fileID: 718242802}
