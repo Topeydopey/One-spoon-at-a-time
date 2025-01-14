@@ -108,12 +108,12 @@ public class ScissorFunction : MonoBehaviour
         {
             Destroy(joint);
         }
-        bonsaiTimer.penalty += 2;
+        bonsaiTimer.penalty += 1;
         untrimmableCutted += 1;
     }
     IEnumerator FinishCutting()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
         bonsaiTimer.winBeforeTimeOut();
     }
 }
