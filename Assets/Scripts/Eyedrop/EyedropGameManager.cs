@@ -11,6 +11,7 @@ public class EyedropGameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;  // Assign your ScoreText TMP object in the Inspector
 
     private int currentScore = 0;
+    public HappinessSystem happinessSystem;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class EyedropGameManager : MonoBehaviour
     public void AddScore(int amount)
     {
         currentScore += amount;
+        happinessSystem.happinessData.IncreaseHappiness(2);
         UpdateScoreUI();
     }
 
