@@ -932,12 +932,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropletPrefab: {fileID: 6573605580867411545, guid: 7bdfc69dba5e0ea4c8d5e5210df1e621, type: 3}
   dropletSpawnPoint: {fileID: 308448936}
-  squeezeForce: 0
+  squeezeForce: 0.5386893
   squeezeSpeed: 1
   maxSqueeze: 5
   dropletThreshold: 3
-  rotationForce: 0.4
-  rotationSpeed: 0.4
+  rotationForce: 20
+  rotationSpeed: 20
   recoilForce: 2
 --- !u!61 &1296422268
 BoxCollider2D:
@@ -1085,9 +1085,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mouse to control
+  m_text: 'A / D to rotate
 
-    LMB to squeeze water'
+    Space to squeeze water'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01eb8763b61f82d409a05794a89ff19d, type: 2}
   m_sharedMaterial: {fileID: 1857398787237782575, guid: 01eb8763b61f82d409a05794a89ff19d, type: 2}
