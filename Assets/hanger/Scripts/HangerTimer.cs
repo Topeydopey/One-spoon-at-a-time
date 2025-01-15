@@ -55,7 +55,6 @@ public class HangerTimer : MonoBehaviour
     }
     public void winBeforeTimeOut()
     {
-        countdownTime = 0;
         timerText.color = Color.green;
         greatJob.SetActive(true);
 
