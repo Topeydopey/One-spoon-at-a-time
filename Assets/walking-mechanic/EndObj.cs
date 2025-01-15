@@ -15,7 +15,7 @@ public class EndObj : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0, 1, 0);
+        StartCoroutine(RingingEffect());
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -32,6 +32,12 @@ public class EndObj : MonoBehaviour
             Time.timeScale = 0;
             this.gameObject.SetActive(false);
         }
+    }
+    IEnumerator RingingEffect()
+    {
+        transform.Rotate(0, 0, 1);
+        yield return new WaitForSeconds(1);
+        transform.Rotate(0, 0, -1);
     }
     /*
     void IncreaseHappiness(float heal)
