@@ -34,6 +34,19 @@ public class BottleController : MonoBehaviour
 
     void Update()
     {
+        // Whenever the player *starts* clicking
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Play your looped sound effect once
+            AudioManager.Instance.Play("EyeDropper");
+        }
+
+        // Whenever the player *releases* the mouse
+        if (Input.GetMouseButtonUp(0))
+        {
+            // Stop the looped sound
+            AudioManager.Instance.Stop("EyeDropper");
+        }
         // -- PRESSURE BUILD-UP (squeeze) logic stays in Update --
 
         float scaleFactor = 4 + (squeezeForce / maxSqueeze) * 1f;
@@ -84,12 +97,33 @@ public class BottleController : MonoBehaviour
     {
         if (dropletPrefab != null && dropletSpawnPoint != null)
         {
-            Instantiate(dropletPrefab, dropletSpawnPoint.position, Quaternion.identity);
+            AudioManager.Instance.Play("Spray");
+
+            // Instantiate the droplet at the nozzle position *and rotation*
+            // so that its "facing direction" matches the bottle's spout.
+            GameObject droplet = Instantiate(dropletPrefab, dropletSpawnPoint.position, dropletSpawnPoint.rotation);
+
+            // 1) Get the droplet's Rigidbody2D
+            Rigidbody2D dropletRb = droplet.GetComponent<Rigidbody2D>();
+            if (dropletRb != null)
+            {
+                // 2) Define a speed for the droplet
+                float dropletSpeed = 5f; // tweak to your liking
+
+                // 3) Determine the direction (assuming 'right' is the spout direction)
+                Vector2 nozzleDir = dropletSpawnPoint.right;
+
+                // 4) Set the droplet's velocity
+                dropletRb.velocity = nozzleDir * dropletSpeed;
+            }
         }
+
+        // Apply recoil to the bottle if desired
         if (rb != null)
         {
-            Vector2 nozzleDir = dropletSpawnPoint.right; // or 'up', depending on your sprite orientation
+            Vector2 nozzleDir = dropletSpawnPoint.right;
             rb.AddForce(-nozzleDir * recoilForce, ForceMode2D.Impulse);
         }
     }
+
 }
