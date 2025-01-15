@@ -32,6 +32,7 @@ public class DryingPole : MonoBehaviour
     {
         if (isCollidingWithHanger)
         {
+            AudioManager.Instance.Play("Hanger");
             if (targetHanger != null)
             {
                 Rigidbody2D poleBody = dryingPole.GetComponent<Rigidbody2D>();
