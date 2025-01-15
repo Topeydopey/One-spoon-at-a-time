@@ -34,6 +34,7 @@ public class ScissorFunction : MonoBehaviour
 
         if (canCut && Input.GetKeyDown(KeyCode.Space))
         {
+            AudioManager.Instance.Play("Scissor");
             if (isOverTrimmable)
             {
                 CutTrimmable();
