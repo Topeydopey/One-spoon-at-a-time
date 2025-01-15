@@ -574,8 +574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elbow: {fileID: 1451085059}
-  forceAmount: 14
-  torqueAmount: 14
+  forceAmount: 15
+  torqueAmount: 15
 --- !u!4 &94646471
 Transform:
   m_ObjectHideFlags: 0
