@@ -7,15 +7,13 @@ public class ChildOrderManager : MonoBehaviour
     public HangerTimer hangerTimer;
     public int amountToWin;
     private int amountOfHanged;
-    private bool hasEnded;
     void Update()
     {
         UpdateChildOrder();
 
-        if (amountOfHanged >= amountToWin && !hasEnded)
+        if (amountOfHanged >= amountToWin)
         {
             StartCoroutine(FinishHanging());
-            hasEnded = true;
         }
     }
 
