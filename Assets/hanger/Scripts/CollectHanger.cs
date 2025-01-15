@@ -17,6 +17,7 @@ public class CollectHanger : MonoBehaviour
     {
         if (isCollidingWithHand && Input.GetKeyDown(KeyCode.Space) && currentHanger == null)
         {
+            AudioManager.Instance.Play("ClothesPickup");
             CollectRandomHanger();
         }
     }
