@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
             rightCheckedScript.RightTouched = false;
 
             rightTimer += 1 * Time.deltaTime;
-            if (rightTimer >= 2)
+            if (rightTimer >= 1.5f)
             {
                 LossBalance();
             }
@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour
             right.motorSpeed = hingespeed;
             rightThigh.motor = right;
 
-            if (rightTimer >= 2)
+            if (rightTimer >= 1.5f)
             {
                 rightTimer -= 1 * Time.deltaTime;
                 GainBalance();
@@ -116,7 +116,7 @@ public class Movement : MonoBehaviour
             leftCheckedScript.LeftTouched = false;
 
             leftTimer += 1 * Time.deltaTime;
-            if (leftTimer >= 2)
+            if (leftTimer >= 1.5f)
             {
                 LossBalance();
             }
@@ -141,7 +141,7 @@ public class Movement : MonoBehaviour
             left.motorSpeed = hingespeed;
             leftThigh.motor = left;
 
-            if (leftTimer >= 2)
+            if (leftTimer >= 1.5f)
             {
                 leftTimer -= 1 * Time.deltaTime;
                 GainBalance();
@@ -200,10 +200,10 @@ public class Movement : MonoBehaviour
     {
         bodyBalance.force -= 10 * Time.deltaTime;
 
-        rightFootBalance.force -= 30 * Time.deltaTime;
-        leftFootBalance.force -= 30 * Time.deltaTime;
-        leftLegBalance.force -= 30 * Time.deltaTime;
-        rightLegBalance.force -= 30 * Time.deltaTime;
+        rightFootBalance.force -= 40 * Time.deltaTime;
+        leftFootBalance.force -= 40 * Time.deltaTime;
+        leftLegBalance.force -= 40 * Time.deltaTime;
+        rightLegBalance.force -= 40 * Time.deltaTime;
 
         if (rightFootBalance.force <= 0)
         {
@@ -233,10 +233,10 @@ public class Movement : MonoBehaviour
     {
         bodyBalance.force += 35 * Time.deltaTime;
 
-        rightFootBalance.force += 35 * Time.deltaTime;
-        leftFootBalance.force += 35 * Time.deltaTime;
-        leftLegBalance.force += 35 * Time.deltaTime;
-        rightLegBalance.force += 35 * Time.deltaTime;
+        rightFootBalance.force += 50 * Time.deltaTime;
+        leftFootBalance.force += 50 * Time.deltaTime;
+        leftLegBalance.force += 50 * Time.deltaTime;
+        rightLegBalance.force += 50 * Time.deltaTime;
 
         if (rightFootBalance.force >= 100)
         {
