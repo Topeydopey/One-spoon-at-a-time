@@ -12,6 +12,8 @@ TagManager:
   - Hanger
   - Droplet
   - Soup
+  - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
