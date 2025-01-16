@@ -53,6 +53,7 @@ public class WalkingTimer : MonoBehaviour
 
     public void TimeOut()
     {
+        Debug.Log("Timeout");
         countdownTime = 0;
         timerText.color = Color.red;
         lossPanel.SetActive(true);
