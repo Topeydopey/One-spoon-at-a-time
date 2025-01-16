@@ -17,8 +17,6 @@ public class HangerTimer : MonoBehaviour
 
     public GameObject timeOut;
     public GameObject greatJob;
-    public GameObject happinessBar;
-    public HappinessBar sliderScript;
 
     void Update()
     {
@@ -49,7 +47,6 @@ public class HangerTimer : MonoBehaviour
 
         happinessSystem.OnLose();
 
-        happinessBar.SetActive(true);
 
         Time.timeScale = 0f;
     }
@@ -60,7 +57,6 @@ public class HangerTimer : MonoBehaviour
 
         happinessSystem.OnWin();
 
-        happinessBar.SetActive(true);
 
         Time.timeScale = 0f;
     }
