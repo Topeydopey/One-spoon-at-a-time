@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 22631613}
   m_Layer: 0
   m_Name: WallT
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -689,6 +689,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 08d5701b290a0f94da89ba3ac1f3c768, type: 3}
     volume: 0.7
     pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: wallHitSound
+    clip: {fileID: 8300000, guid: 6e764db648c796a43802f208df2732ed, type: 3}
+    volume: 0.1
+    pitch: 0.55
     loop: 0
     source: {fileID: 0}
 --- !u!4 &385913168
@@ -2564,7 +2570,7 @@ GameObject:
   - component: {fileID: 956999809}
   m_Layer: 0
   m_Name: WallR
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2851,7 +2857,7 @@ GameObject:
   - component: {fileID: 1198829097}
   m_Layer: 0
   m_Name: WallB
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2928,7 +2934,7 @@ GameObject:
   - component: {fileID: 1268326306}
   m_Layer: 0
   m_Name: WallL
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3809,8 +3815,6 @@ MonoBehaviour:
   countdownTime: 60
   happinessSystem: {fileID: 1099826785}
   lossPanel: {fileID: 243217553}
-  happinessBar: {fileID: 1858019363}
-  sliderScript: {fileID: 1858019366}
 --- !u!1 &1590732096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,6 +4167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1749876690}
   - component: {fileID: 1749876689}
+  - component: {fileID: 1749876691}
   - component: {fileID: 1749876688}
   - component: {fileID: 1749876687}
   m_Layer: 0
@@ -4297,6 +4302,23 @@ Transform:
   - {fileID: 150376611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1749876691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749876686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcef8b2c21f5f1341b6aebaf57fad40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 2
+  slowSpeed: 1
+  fastSpeed: 5
+  switchInterval: 2
+  speedSmoothTime: 1
 --- !u!1 &1818792289
 GameObject:
   m_ObjectHideFlags: 0

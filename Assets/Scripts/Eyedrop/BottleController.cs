@@ -121,4 +121,14 @@ public class BottleController : MonoBehaviour
             rb.AddForce(-nozzleDir * recoilForce, ForceMode2D.Impulse);
         }
     }
+
+    // **New Collision Detection Method**
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            // Play the wall hit sound
+            AudioManager.Instance.Play("wallHitSound");
+        }
+    }
 }
