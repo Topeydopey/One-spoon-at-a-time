@@ -42,7 +42,7 @@ public class EndDayManager : MonoBehaviour
                 SceneManager.LoadScene("Bonsai #2");
                 break;
             case 2:
-                SceneManager.LoadScene("Bonsai #End");
+                SceneManager.LoadScene("Bonsai #3");
                 break;
             case 3:
                 // If this is your final day, go to a "Win" or "End" scene
