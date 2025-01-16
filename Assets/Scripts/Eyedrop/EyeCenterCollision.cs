@@ -11,7 +11,7 @@ public class EyeCenterCollision : MonoBehaviour
         {
             Debug.Log("Eye center hit!");
 
-            EyedropGameManager.instance.AddScore(10);
+            EyedropGameManager.instance.AddScore(2);
 
             // If you have a GameManager, you can do:
             // GameManager.instance.AddScore(centerHitScore);
