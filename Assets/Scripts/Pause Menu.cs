@@ -41,4 +41,10 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1;
     }
+
+    public void LoadEndOfDay()
+    {
+        SceneManager.LoadScene("EndOfDayScene");
+        Time.timeScale = 1;
+    }
 }

@@ -9,7 +9,7 @@ public class EndDayManager : MonoBehaviour
     public TextMeshProUGUI happinessText;        // TextMeshPro UI element
 
     [Header("Settings")]
-    public float happinessThreshold = 20f;       // Minimum happiness needed to continue
+    public float happinessThreshold = 10f;       // Minimum happiness needed to continue
 
     void Start()
     {
