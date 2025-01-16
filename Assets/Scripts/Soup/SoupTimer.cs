@@ -10,9 +10,6 @@ public class SoupTimer : MonoBehaviour
 
 
     public GameObject timeOut;
-    public GameObject greatJob;
-    public GameObject happinessBar;
-    public HappinessBar sliderScript;
 
     void Update()
     {
@@ -40,21 +37,6 @@ public class SoupTimer : MonoBehaviour
         countdownTime = 0;
         timerText.color = Color.red;
         timeOut.SetActive(true);
-
-        happinessSystem.OnLose();
-
-        happinessBar.SetActive(true);
-
-        Time.timeScale = 0f;
-    }
-    public void winBeforeTimeOut()
-    {
-        timerText.color = Color.green;
-        greatJob.SetActive(true);
-
-        happinessSystem.OnWin();
-
-        happinessBar.SetActive(true);
 
         Time.timeScale = 0f;
     }

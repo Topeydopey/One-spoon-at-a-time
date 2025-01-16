@@ -3999,14 +3999,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 997800211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f315c1a9614950340bca9d17ed3fff34, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ddf5158b4f1a3c4ca37d53fcfef34f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 67501737}
   countdownTime: 60
   happinessSystem: {fileID: 677114533}
   timeOut: {fileID: 1819374510}
-  greatJob: {fileID: 893699138}
 --- !u!1 &1017178453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1926242425896521448, guid: 744e2bcc284ab7f4da5658d2556b28de, type: 3}
