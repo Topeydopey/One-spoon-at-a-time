@@ -1548,7 +1548,7 @@ MonoBehaviour:
   dragFrequency: 1
   dragDampingRatio: 1.4
   useSpringJoint: 1
-  torqueForce: 30
+  torqueForce: 25
 --- !u!60 &811909138
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1623,7 +1623,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 2
   m_LinearDrag: 0
-  m_AngularDrag: 1.03
+  m_AngularDrag: 5.5
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: d9356001b927f4449871c387ac33fc5a, type: 2}
   m_IncludeLayers:
