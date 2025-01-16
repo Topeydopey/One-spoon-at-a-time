@@ -6926,7 +6926,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 89532371}
-  - {fileID: 1373481958}
   - {fileID: 1558211351}
   - {fileID: 1165460582}
   - {fileID: 816482305}
@@ -7500,16 +7499,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373481957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.1745048}
-  m_LocalScale: {x: 1.2362499, y: 1.2362499, z: 1.2362499}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 780732072}
-  m_Father: {fileID: 1315068939}
+  m_Father: {fileID: 1431583485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652.80426, y: 373.43033}
+  m_AnchoredPosition: {x: -537.00006, y: 293.00012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1409163628
@@ -7776,6 +7775,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1373481958}
   - {fileID: 1195415684}
   - {fileID: 1315068939}
   - {fileID: 52985138}
@@ -9838,7 +9838,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happinessSystem: {fileID: 834388603}
   winPanel: {fileID: 911228878}
-  currentHappiness: 30
 --- !u!212 &1814919416
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -34,14 +34,6 @@ public class WalkingTimer : MonoBehaviour
             TimeOut();
         }
     }
-    /*
-        void DecreaseHappiness(int damage)
-        {
-            currentHappiness -= damage;
-
-            sliderScript.SetHappiness(currentHappiness);
-        }
-        */
 
     public void resetTimer()
     {
@@ -56,8 +48,6 @@ public class WalkingTimer : MonoBehaviour
         lossPanel.SetActive(true);
 
         happinessSystem.OnLose();
-
-        //DecreaseHappiness(20);
 
         Time.timeScale = 0f;
     }

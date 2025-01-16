@@ -8,7 +8,7 @@ public class EndObj : MonoBehaviour
     public HappinessSystem happinessSystem;
 
     public GameObject winPanel;
-    public float currentHappiness; //we should have a script to save to value throughout the scenes
+    //public float currentHappiness;
 
 
     void Update()
@@ -24,8 +24,6 @@ public class EndObj : MonoBehaviour
 
             winPanel.SetActive(true);
 
-            //IncreaseHappiness(20);
-
             Time.timeScale = 0;
             this.gameObject.SetActive(false);
         }
@@ -36,13 +34,5 @@ public class EndObj : MonoBehaviour
         yield return new WaitForSeconds(1);
         transform.Rotate(0, 0, -1);
     }
-    /*
-    void IncreaseHappiness(float heal)
-    {
-        currentHappiness += heal;
 
-        sliderScript.SetHappiness(currentHappiness);
-        //systemScript.currentHappiness = currentHappiness;
-    }
-    */
 }
