@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
 public class MainMenuButton : MonoBehaviour
 {
     public GameObject panel1;
-    public GameObject panel2;
-    public GameObject panel3;
 
 
     public Button Play;

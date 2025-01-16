@@ -16,8 +16,6 @@ public class WalkingTimer : MonoBehaviour
 
 
     public GameObject lossPanel;
-    public GameObject happinessBar;
-    public HappinessBar sliderScript;
 
 
 
@@ -59,7 +57,6 @@ public class WalkingTimer : MonoBehaviour
 
         happinessSystem.OnLose();
 
-        happinessBar.SetActive(true);
         //DecreaseHappiness(20);
 
         Time.timeScale = 0f;
