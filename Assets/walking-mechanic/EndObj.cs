@@ -8,8 +8,6 @@ public class EndObj : MonoBehaviour
     public HappinessSystem happinessSystem;
 
     public GameObject winPanel;
-    public GameObject happinessBar;
-    public HappinessBar sliderScript;
     public float currentHappiness; //we should have a script to save to value throughout the scenes
 
 
@@ -26,7 +24,6 @@ public class EndObj : MonoBehaviour
 
             winPanel.SetActive(true);
 
-            happinessBar.SetActive(true);
             //IncreaseHappiness(20);
 
             Time.timeScale = 0;
