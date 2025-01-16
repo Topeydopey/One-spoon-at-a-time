@@ -8,6 +8,9 @@ public class HappinessData : ScriptableObject
     [Range(0, 100)]
     public float currentHappiness = 100;
 
+    // This new variable tracks which day the player is on.
+    public int currentDay = 1;
+
     public void IncreaseHappiness(float amount)
     {
         currentHappiness = Mathf.Clamp(currentHappiness + amount, 0, 100);
