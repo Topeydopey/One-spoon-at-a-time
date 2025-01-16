@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happinessData: {fileID: 11400000, guid: a3f00d52f221f2241a6bfefbdd6dd758, type: 2}
   happinessText: {fileID: 344709479}
-  happinessThreshold: 20
+  happinessThreshold: 4
 --- !u!4 &1759802156
 Transform:
   m_ObjectHideFlags: 0
