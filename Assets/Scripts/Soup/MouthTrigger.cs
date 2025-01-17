@@ -8,7 +8,7 @@ public class MouthTrigger : MonoBehaviour
         if (other.CompareTag("Soup"))
         {
             happinessSystem.happinessData.IncreaseHappiness(2);
-
+            AudioManager.Instance.Play("eating");
             Destroy(other.gameObject);
         }
     }

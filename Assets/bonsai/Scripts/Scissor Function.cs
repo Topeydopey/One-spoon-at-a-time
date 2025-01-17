@@ -48,6 +48,7 @@ public class ScissorFunction : MonoBehaviour
 
                 if (accidentCut >= maximumAccident)
                 {
+                    AudioManager.Instance.Play("plantCutSound");
                     CutUntrimmable();
                     accidentCut = 0;
                 }
@@ -104,6 +105,7 @@ public class ScissorFunction : MonoBehaviour
         {
             Destroy(joint);
         }
+        AudioManager.Instance.Play("plantCutSound");
         happinessSystem.happinessData.IncreaseHappiness(2);
         bonsaiTimer.penalty -= 1;
         trimmableCutted += 1;
