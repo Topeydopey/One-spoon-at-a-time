@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class EyeCenterCollision : MonoBehaviour
 {
-    public int centerHitScore = 100; // points (or any logic) for hitting center
+    [Header("Scoring Settings")]
+    public int centerHitScore = 100; // Points for hitting the center
+
+    [Header("Audio Settings")]
+    public string eyeHitSound = "EyeHit"; // Name of the eye hit sound in AudioManager
+
+    [Header("Vignette Controller")]
+    public VignetteController vignetteController; // Assign in Inspector
+
+    [Header("Depth of Field Controller")]
+    public DepthOfFieldController depthOfFieldController;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -11,10 +21,23 @@ public class EyeCenterCollision : MonoBehaviour
         {
             Debug.Log("Eye center hit!");
 
+            // Add score through the GameManager
             EyedropGameManager.instance.AddScore(2);
 
-            // If you have a GameManager, you can do:
-            // GameManager.instance.AddScore(centerHitScore);
+            // Play the eye hit sound
+            AudioManager.Instance.Play(eyeHitSound);
+
+            // Reduce vignette intensity
+            if (vignetteController != null)
+            {
+                vignetteController.ReduceVignette();
+            }
+
+            // Reset Depth of Field Blur
+            if (depthOfFieldController != null)
+            {
+                depthOfFieldController.ReduceBlur();
+            }
 
             // Destroy the droplet so it doesn't keep triggering
             Destroy(other.gameObject);
