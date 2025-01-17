@@ -2458,7 +2458,7 @@ RectTransform:
   m_GameObject: {fileID: 888490859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.41666532, y: 0.41666532, z: 0.41666532}
+  m_LocalScale: {x: 0.41666538, y: 0.41666538, z: 0.41666538}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1496937555}
@@ -3316,7 +3316,7 @@ MonoBehaviour:
   dropletThreshold: 3
   rotationForce: 20
   rotationSpeed: 20
-  recoilForce: 2
+  recoilForce: 4
 --- !u!61 &1296422268
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f33d9b8acf1984478194f1da90c3b81, type: 3}
   m_Name: HappinessData
   m_EditorClassIdentifier: 
-  currentHappiness: 100
-  currentDay: 1
+  currentHappiness: 59
+  currentDay: 2

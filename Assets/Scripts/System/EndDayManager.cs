@@ -7,6 +7,9 @@ public class EndDayManager : MonoBehaviour
     [Header("References")]
     public HappinessData happinessData;          // Reference to your ScriptableObject
     public TextMeshProUGUI happinessText;        // TextMeshPro UI element
+    public GameObject happy;
+    public GameObject unHappy;
+    public GameObject sad;
 
     [Header("Settings")]
     public float happinessThreshold = 10f;       // Minimum happiness needed to continue
@@ -16,12 +19,24 @@ public class EndDayManager : MonoBehaviour
         // Display the player's current happiness and day info
         if (happinessText != null)
         {
-            happinessText.text = "Happiness: " + happinessData.currentHappiness.ToString("F0")
+            happinessText.text = "Happiness: " + happinessData.currentHappiness.ToString("F0") + "/100"
                                  + "\nDay: " + happinessData.currentDay;
         }
         else
         {
             Debug.LogWarning("No happinessText (TextMeshPro) assigned in EndDayManager.");
+        }
+        if (happinessData.currentHappiness <= 50)
+        {
+            sad.SetActive(true);
+        }
+        else if (happinessData.currentHappiness <= 65)
+        {
+            unHappy.SetActive(true);
+        }
+        else
+        {
+            happy.SetActive(true);
         }
     }
 
