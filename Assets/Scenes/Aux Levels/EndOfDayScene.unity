@@ -1935,7 +1935,7 @@ MonoBehaviour:
   happy: {fileID: 2073236482}
   unHappy: {fileID: 550357224}
   sad: {fileID: 255116236}
-  happinessThreshold: 4
+  happinessThreshold: 50
 --- !u!4 &1759802156
 Transform:
   m_ObjectHideFlags: 0

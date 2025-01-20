@@ -12,7 +12,7 @@ public class EndDayManager : MonoBehaviour
     public GameObject sad;
 
     [Header("Settings")]
-    public float happinessThreshold = 10f;       // Minimum happiness needed to continue
+    public float happinessThreshold = 50f;       // Minimum happiness needed to continue
 
     void Start()
     {
